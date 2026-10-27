@@ -40,7 +40,8 @@
 
       const markets = new FeatureLayer({
         url: "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/40"
-          title: "Certificated farmers markets",
+        title: "Certificated farmers markets",
+        renderer,  
         popupTemplate: {
           title: "{Name}", // Specify the popup title.
           content: "<b>Open:</b> {hours} <br><b>Where: {addrln1}, {city}",
