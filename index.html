@@ -30,16 +30,13 @@
       const viewElement = document.querySelector("arcgis-map");
       await viewElement.viewOnReady(); // Wait for the properties to be ready.
 
-      // Configure the renderer to alter the symbol style, size breaks, and legend.
-      // const outline = { color: "#A9A9A9", width: 0.5 }; // autocasts as new SimpleLineSymbol()
       const renderer = {
         type: "simple", // autocasts as new SimpleRenderer()
-        // autocasts as new SimpleMarkerSymbol()
         symbol: { type: "simple-marker", size: 9, color: "#ff5C00", outline: { color: "#ffffff", width: 1 } },
       };
 
       const markets = new FeatureLayer({
-        url: "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/40"
+        url: "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/40",
         title: "Certificated farmers markets",
         renderer,  
         popupTemplate: {
